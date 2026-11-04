@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#7654d8"><title>Login · Toko Buku UT</title><link rel="stylesheet" href="css/style.css"></head>
+<body class="login-body">
+<section class="login-showcase"><div class="login-brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5z"/><path d="M4 6h13M8 8.5v5l2-1.5 2 1.5v-5"/></svg></div><div>TOKO BUKU UT<small>Ruang untuk bertumbuh</small></div></div><div class="showcase-copy"><div class="eyebrow">Selamat datang di toko buku</div><h1>Temukan ilmu.<br><span>Buka kemungkinan.</span></h1><p>Jelajahi koleksi buku pilihan Universitas Terbuka dan temukan inspirasi baru untuk perjalanan belajarmu.</p></div><div class="showcase-bottom">© 2026 Toko Buku UT · Belajar tanpa batas.</div></section>
+<section class="login-side"><div class="login-card"><div class="eyebrow">Akses akun</div><h2>Selamat datang 👋</h2><p class="login-subtitle">Masuk untuk melanjutkan ke ruang belajarmu.</p><div id="loginNotice" class="notice" role="alert"></div><form id="loginForm"><div class="form-group"><label for="email">Alamat email</label><input type="email" id="email" autocomplete="username" required placeholder="nama@email.com"></div><div class="form-group"><label for="password">Kata sandi</label><input type="password" id="password" autocomplete="current-password" required placeholder="Masukkan kata sandi"></div><button type="submit" class="btn btn-block">Masuk ke akun <span aria-hidden="true">→</span></button></form><div class="auth-links"><button type="button" class="text-button" data-open-modal="forgotModal">Lupa password?</button><span>Belum punya akun? <button type="button" class="text-button strong" data-open-modal="registerModal">Daftar sekarang</button></span></div><div class="demo-accounts"><strong>Akun demo untuk mencoba</strong><div>User: <code>rina@gmail.com</code> / <code>rina123</code></div><div>Admin: <code>siti@gmail.com</code> / <code>siti123</code></div></div><div class="login-footer">Akses aman · Antarmuka nyaman di semua perangkat</div></div></section>
+
+<!-- POPUP DAFTAR AKUN -->
+<div class="modal-backdrop" id="registerModal" aria-hidden="true">
+  <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+    <button class="modal-close" type="button" aria-label="Tutup popup" data-close-modal>&times;</button>
+    <div class="modal-icon">✦</div><div class="eyebrow">BUAT AKUN BARU</div><h2 id="registerTitle">Gabung bersama kami</h2><p class="modal-desc">Buat akun untuk mulai menjelajahi koleksi buku.</p>
+    <div id="registerNotice" class="notice" role="alert"></div>
+    <form id="registerForm">
+      <div class="form-group"><label for="registerName">Nama lengkap</label><input id="registerName" type="text" required minlength="2" autocomplete="name" placeholder="Nama kamu"></div>
+      <div class="form-group"><label for="registerEmail">Alamat email</label><input id="registerEmail" type="email" required autocomplete="email" placeholder="nama@email.com"></div>
+      <div class="form-group"><label for="registerPassword">Kata sandi</label><input id="registerPassword" type="password" required minlength="6" autocomplete="new-password" placeholder="Minimal 6 karakter"></div>
+      <div class="form-group"><label for="registerConfirm">Ulangi kata sandi</label><input id="registerConfirm" type="password" required minlength="6" autocomplete="new-password" placeholder="Ketik ulang kata sandi"></div>
+      <button type="submit" class="btn btn-block">Buat akun <span aria-hidden="true">→</span></button>
+    </form><p class="modal-switch">Sudah punya akun? <button type="button" class="text-button strong" data-switch-modal="registerModal:login">Masuk di sini</button></p>
+  </section>
+</div>
+<!-- POPUP LUPA PASSWORD -->
+<div class="modal-backdrop" id="forgotModal" aria-hidden="true">
+  <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+    <button class="modal-close" type="button" aria-label="Tutup popup" data-close-modal>&times;</button>
+    <div class="modal-icon">↻</div><div class="eyebrow">PEMULIHAN AKUN</div><h2 id="forgotTitle">Lupa kata sandi?</h2><p class="modal-desc">Masukkan email akun dan buat kata sandi baru. Mode demo ini menyimpan perubahan di browser ini.</p>
+    <div id="forgotNotice" class="notice" role="alert"></div>
+    <form id="forgotForm">
+      <div class="form-group"><label for="forgotEmail">Alamat email akun</label><input id="forgotEmail" type="email" required autocomplete="email" placeholder="nama@email.com"></div>
+      <div class="form-group"><label for="newPassword">Kata sandi baru</label><input id="newPassword" type="password" required minlength="6" autocomplete="new-password" placeholder="Minimal 6 karakter"></div>
+      <div class="form-group"><label for="confirmNewPassword">Ulangi kata sandi baru</label><input id="confirmNewPassword" type="password" required minlength="6" autocomplete="new-password" placeholder="Ketik ulang kata sandi"></div>
+      <button type="submit" class="btn btn-block">Simpan kata sandi baru <span aria-hidden="true">→</span></button>
+    </form><p class="modal-switch"><button type="button" class="text-button strong" data-switch-modal="forgotModal:login">← Kembali ke login</button></p>
+  </section>
+</div>
+<div class="toast" id="authToast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script><script src="js/script.js"></script></body></html>
